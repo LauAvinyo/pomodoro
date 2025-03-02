@@ -11,7 +11,8 @@ const TASKS_FILE = 'tasks.json';
 // app.use(cors());
 
 app.use(cors({
-  origin: 'pomodoro-steel-pi.vercel.app', 
+  // origin: 'pomodoro-steel-pi.vercel.app'
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST', 'DELETE'], 
   allowedHeaders: ['Content-Type'], 
 }));
