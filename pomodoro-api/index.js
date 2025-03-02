@@ -9,6 +9,13 @@ const PORT = 3001;
 const TASKS_FILE = 'tasks.json';
 
 app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Replace with your client's domain
+  methods: ['GET', 'POST', 'DELETE'], // Specify allowed methods
+  allowedHeaders: ['Content-Type'], // Specify allowed headers
+}));
+
 app.use(bodyParser.json());
 
 // Load tasks from file
