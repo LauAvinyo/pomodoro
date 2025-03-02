@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+// const PORT = 3001;
 const TASKS_FILE = 'tasks.json';
 
 // app.use(cors());
@@ -61,6 +61,7 @@ app.delete('/tasks/:index', (req, res) => {
   res.status(200).json({ message: 'Task deleted' });
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
