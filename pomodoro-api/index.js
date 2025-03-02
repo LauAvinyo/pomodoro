@@ -34,10 +34,10 @@ const saveTasks = (tasks) => {
 };
 
 
-// Get tasks
-app.get('/', (req, res) => {
-  res.json({ message: 'Server is running' });
-});
+// // Get tasks
+// app.get('/', (req, res) => {
+//   res.json({ message: 'Server is running' });
+// });
 
 // Get tasks
 app.get('/tasks', (req, res) => {
