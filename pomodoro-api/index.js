@@ -25,6 +25,12 @@ const saveTasks = (tasks) => {
   fs.writeFileSync(TASKS_FILE, JSON.stringify(tasks, null, 2));
 };
 
+
+// Get tasks
+app.get('/', () => {
+  res.json({ message: 'Server is running' });
+});
+
 // Get tasks
 app.get('/tasks', (req, res) => {
   const tasks = loadTasks();
