@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+const API_URL = 'https://pomodoro-server-rouge.vercel.app/'; 
 const TaskList: React.FC = () => {
   const [tasks, setTasks] = useState<string[]>([]);
   const [newTask, setNewTask] = useState('');
 
   // Fetch tasks from the API
   useEffect(() => {
-    fetch('http://localhost:3001/tasks')
+    fetch(API_URL)
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -15,7 +16,7 @@ const TaskList: React.FC = () => {
   // Add a task via the API
   const addTask = () => {
     if (newTask.trim()) {
-      fetch('http://localhost:3001/tasks', {
+      fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +34,7 @@ const TaskList: React.FC = () => {
 
   // Remove a task via the API
   const removeTask = (index: number) => {
-    fetch(`http://localhost:3001/tasks/${index}`, {
+    fetch(`${API_URL}/tasks/${index}`, {
       method: 'DELETE',
     })
       .then(response => response.json())
