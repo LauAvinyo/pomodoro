@@ -1,7 +1,7 @@
 import React from 'react';
 import Timer from './components/Timer';
 import TaskList from './components/TaskList';
-import LofiMusicPlayer from './components/LofiMusicPlayer';
+// import LofiMusicPlayer from './components/LofiMusicPlayer';
 
 
 const App: React.FC = () => {
